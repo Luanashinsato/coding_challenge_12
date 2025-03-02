@@ -1,0 +1,2 @@
+# Coding Challenge 12
+Interacting with the Document Object Model (DOM) to build a dynamic business dashboard that displays key metrics (like Revenue, Profit, and Expenses) and an inventory list of products. 
