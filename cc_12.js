@@ -30,3 +30,23 @@ metricCardsArray.forEach(card => {
     const header = card.querySelector("h3"); 
     header.textContent += " - Updated" // Appending " - Updated" to the headers
 })
+
+
+
+// TASK 3: Dynamic Inventory Management – Adding and Removing Items
+// Writing a function that creates a new <li> element representing a product
+const inventoryList = document.getElementById("inventoryList"); // Selecting the inventory list 
+function addInventoryItem(productName) {
+    const newProduct = document.createElement("li"); // Creating a new list item for the new product 
+    newProduct.textContent = productName; // Setting the text content to the product name
+
+    newProduct.setAttribute("class", "product-item"); // Adding a class to the <li> 
+    newProduct.setAttribute("data-product", productName); // Adding a custom data attribute to the <li> 
+
+    inventoryList.appendChild(newProduct); // Appending the new product item to the inventory list
+
+    // Writing a function that removes a specific <li> when clicked
+    newProduct.addEventListener("click", () => { 
+        inventoryList.removeChild(newProduct); 
+    }) 
+}
