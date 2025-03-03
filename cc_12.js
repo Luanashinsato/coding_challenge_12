@@ -50,3 +50,31 @@ function addInventoryItem(productName) {
         inventoryList.removeChild(newProduct); 
     }) 
 }
+
+
+
+// TASK 4: Business Customer Section – Handling Event Bubbling
+const customerSection = document.getElementById("customerSection"); // Selecting the customer section
+
+// Adding click event listener to the parent container 
+customerSection.addEventListener("click", () => {
+    console.log("Customer section clicked");
+});
+
+// Creating customer cards dynamically
+const customers = ["Customer 1", "Customer 2"];
+
+customers.forEach((name) => {
+    // Adding child elements with the class "customer-card"
+    const customerCard = document.createElement("div");
+    customerCard.setAttribute("class", "customer-card");
+    customerCard.innerText = name;
+
+    // Adding click event listener to each customer card
+    customerCard.addEventListener("click", (event) => {
+        console.log("Customer card clickled");
+        event.stopPropagation(); // Calling stopPropagation() so that the parent's event handler does not trigger
+    });
+
+    customerSection.appendChild(customerCard); // Appending the customer cards to the customer section
+});
